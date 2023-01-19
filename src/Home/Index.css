@@ -1,3 +1,15 @@
+@font-face{
+  font-family:'Fatface';
+  src:url('../assets/font/Abril Fatface/Abril\ Fatface.ttf')
+}
+@font-face {
+  font-family: 'abhaya-libre';
+  src: url('../assets/font/abhaya-libre/AbhayaLibre-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'abhaya-libre-extra';
+  src: url('../assets/font/Abhaya-Libre-ExtraBold/abhayalibre/AbhayaLibre-ExtraBold.ttf');
+}
 .container{
   background-color: #1a1926;
   height: 100vh;
@@ -9,11 +21,15 @@
 
 img{
   border-radius: 12px;
+  height: 500px;
 }
 .text-white{
   color: #fff;
 }
 .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: 72px;
   height: 500px;
   color: rgba(255, 255, 255, 0.6);
@@ -23,11 +39,11 @@ img{
   font-size: 54px;
   height: 54px;
   line-height: 54px;
-  font-family: 'Abril Fatface';
+  font-family: Fatface;
 }
 .based{
   width: 752px;
-  font-family: 'Abhaya Libre ExtraBold';
+  font-family: abhaya-libre-extra;
 }
 
 .flex{
@@ -35,7 +51,7 @@ img{
   width: 655px;
 }
 .count{
-  width: 263px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,6 +94,7 @@ img{
   width: 20px;
   border: none;
   text-align: center;
+  font-family: Fatface;
 }
 .step{
   height: 16px;
@@ -89,4 +106,9 @@ img{
   border: 1px solid #ccc;
   font-size: 16px;
   color: #1a1926;
+}
+.t3{
+  font-size: 32px;
+  font-weight: 400;
+  font-family: Fatface;
 }

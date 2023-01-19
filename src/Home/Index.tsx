@@ -10,11 +10,11 @@ const Home = () => {
   const [stepVal, setStepVal] = useState<number>(1);
 
   const {
-    web3,
+    // web3,
     web3Modal,
-
+    getCount
   } = useWallet()
-
+  getCount()
   const mint = async () => {
     const abi = [
       {
@@ -421,24 +421,23 @@ const Home = () => {
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
-    const nftContract = new web3.eth.Contract(abi, nftContractAddress);
-    await nftContract.methods
-      .mint(accounts[0], 1)
-      .send({ from: accounts[0], value: 100000000000000 });
+    // const nftContract = new web3.eth.Contract(abi, nftContractAddress);
+    // await nftContract.methods
+    //   .mint(accounts[0], 1)
+    //   .send({ from: accounts[0], value: 100000000000000 });
   };
 
   const WalletConnect = async () => {
     const provider = await web3Modal.connect();
-    const web3 = new Web3(provider);
+
+    const web3 = new Web3(provider)
+   
     const accounts = await web3.eth.getAccounts();
     const chainID = await web3.eth.getChainId();
-    console.log('provider',provider)
-    console.log('accounts',accounts);
     console.log('chainID',chainID);
+
+
     
-    // setProvider(provider);
-    // setWeb3(web3);
-    // setChainId(chainID);
   };
 
   // const disConnect = async() => {
@@ -477,10 +476,10 @@ const Home = () => {
           </div>
         </div>
         <div style={{ height: "8px" }}></div>
-        <div className={"flex"}>
+        {/* <div className={"flex"}>
           <div className={"text-white"}>Contract:&nbsp;&nbsp;&nbsp;</div>
           <div> ......</div>
-        </div>
+        </div> */}
         <div style={{ height: "8px" }}></div>
         <div className={"flex"}>
           <div className={"text-white"}>
@@ -490,19 +489,19 @@ const Home = () => {
         </div>
         <div style={{ height: "38px" }}></div>
         <div className={"count"}>
-          <div className={"text-white jcc"}>
-            <div>Price</div>
-            <div>0.1ETh</div>
+          <div className={"text-white jcc "}>
+            <div style={{fontFamily:'abhaya-libre'}}>Price</div>
+            <div className={'t3'}>0.1ETh</div>
           </div>
           <div className={"text-white jcc"}>
-            <div>Amount</div>
-            <div>1000/2000</div>
+            <div style={{fontFamily:'abhaya-libre'}}>Amount</div>
+            <div className={'t3'}>1000/2000</div>
           </div>
         </div>
-        <div style={{ height: "8px" }}></div>
+        <div style={{ height: "10px" }}></div>
 
-        <div className={"mint"} onClick={WalletConnect}>
-          <div>Mint</div>
+        <div className={"mint "} onClick={WalletConnect}>
+          <div className={'text-white'}>Mint</div>
           <div className={"stepBtn"}>
             <div
               className={"step"}
